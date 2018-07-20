@@ -7,7 +7,7 @@ A Liquid tag plugin for Jekyll that allows remote includes from external sources
 Add this line to your application's Gemfile:
 ```ruby
 group :jekyll_plugins do
-    gem 'jekyll-remote-include', :bitbucket => 'netrics/jekyll-remote-include' 
+    gem 'jekyll-remote-include', :bitbucket => 'Nextrix/jekyll-remote-include' 
 end
 ```
 
