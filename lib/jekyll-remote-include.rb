@@ -19,18 +19,10 @@ module Jekyll
       begin
         # try
         URI.parse((@remote_include).strip)
-        local_url = 1
+        open("#{@remote_include}")
       rescue
         # catch
         URI.parse(context[@remote_include.strip].strip)
-        local_url = 2
-      ensure
-        # always
-      end
-
-      if local_url == 1
-        open("#{@remote_include}")
-      elsif local_url == 2
         open("#{context[@remote_include.strip]}")
       end
     end
