@@ -15,7 +15,16 @@ module Jekyll
     end
 
     def render(context)
-      open("#{@remote_include}")
+      local_url = nil
+      begin
+        # try
+        URI.parse((@remote_include).strip)
+        open("#{@remote_include}")
+      rescue
+        # catch
+        URI.parse(context[@remote_include.strip].strip)
+        open("#{context[@remote_include.strip]}")
+      end
     end
 
   end
